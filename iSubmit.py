@@ -13,8 +13,13 @@ GRAVITY = 5
 FPS = 180
 LAUNCH_FACTOR = 15
 REFLECTIONS_MULTI = -0.5
-DIVISIONS = 49
+# I have found 40-60 subsections/divisions works best
+DIVISIONS = 40
 CHOPINTERVAL = 0
+RADIUS_OF_BALLS = 10
+DISTANCE_BETWEEN_BALLS = 10
+AMOUNT_OF_BALLS = 400
+
 
 
 '''
@@ -197,7 +202,7 @@ gravity = GRAVITY
 passes = 0
 startTime = time.time()
 
-fillScreenWithBalls(12,10,1000,AllBalls)
+fillScreenWithBalls(RADIUS_OF_BALLS,DISTANCE_BETWEEN_BALLS,AMOUNT_OF_BALLS,AllBalls)
 
 while run:
     screen.fill(WHITE)
@@ -302,3 +307,4 @@ endTime = time.time()
 print(f"pps: {passes/(endTime-startTime)}")
 
 pygame.quit()
+
